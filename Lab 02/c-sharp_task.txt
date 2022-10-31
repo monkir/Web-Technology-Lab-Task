@@ -1,0 +1,97 @@
+﻿using System;
+
+namespace MyApp // Note: actual namespace depends on the project name.
+{
+    class Author
+    {
+        string name;
+        string email;
+        char gender;
+        public Author(string name, string email, char gender)
+        {
+            this.name = name;
+            this.email = email;
+            this.gender = gender;
+        }
+        public void ShowInfo()
+        {
+            Console.WriteLine("Author Info: ");
+            Console.WriteLine("\tName: " + this.name);
+            Console.WriteLine("\tEmail: " + this.email);
+            Console.WriteLine("\tGender: " + this.gender);
+        }
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+        }
+        public string Email
+        {
+            get { return this.email; }
+            set { this.email = value; }
+        }
+        public char Gender
+        {
+            get { return this.gender; }
+            set
+            {
+                if(value=='M' || value=='F')
+                {
+                    this.gender = value;
+                }
+            }
+        }
+    }
+    class Book
+    {
+        string BookTitle;
+        Author author;
+        double price;
+        int quantity;
+        public Book(string bookTitle, Author author, double price, int quantity)
+        {
+            BookTitle = bookTitle;
+            this.author = author;
+            this.price = price;
+            this.quantity = quantity;
+        }
+        public string getAuthorName()
+        {
+            return author.Name;
+        }
+        public void setAuthorName(string name)
+        {
+            author.Name = name;
+        }
+        public string BookTitleProperty
+        {
+            get { return this.BookTitle; }
+        }
+        public double bookPriceProperty
+        {
+            get { return this.price; }
+        }
+        public int BookQuantityProperty
+        {
+            get { return this.quantity; }
+        }
+        public void ShowDetails()
+        {
+            Console.WriteLine("Book Details:");
+            Console.WriteLine("\tBook title: " + this.BookTitle);
+            Console.WriteLine("\tAuthor name: " + this.getAuthorName());
+            Console.WriteLine("\tPrice: " + this.price);
+            Console.WriteLine("\tQuantity: " + this.quantity);
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Author author1 = new Author("Susan", "susan@gmail.com", 'M');
+            Book book1 = new Book("Chemistry", author1, 100, 50);
+            book1.ShowDetails();
+
+        }
+    }
+}
