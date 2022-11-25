@@ -1,0 +1,53 @@
+<html>
+  <head>
+  </head>
+<body>
+Enter CGPA: <input type="number" step="0.25" id="cgpa"><br>
+<button onclick="myFunction()">See CGPA</button><br>
+<p id="grade">paragraph</p>
+<script>
+function myFunction() {
+  var cgpa = 4.00;
+  var cgpa = document.getElementById("cgpa").value;
+  var grade;
+  if(cgpa>=4.00)
+  {
+    grade='A+';
+  }
+  else if(cgpa>=3.75)
+  {
+    grade='A';
+  }
+  else if(cgpa>=3.50)
+  {
+    grade='B+';
+  }
+  else if(cgpa>=3.25)
+  {
+    grade='B';
+  }
+  else if(cgpa>=3.00)
+  {
+    grade='C+';
+  }
+  else if(cgpa>=2.75)
+  {
+    grade='C';
+  }
+  else if(cgpa>=2.50)
+  {
+    grade='D+';
+  }
+  else if(cgpa>=2.00)
+  {
+    grade='D';
+  }
+  else
+  {
+    grade='F';
+  }
+  document.getElementById("grade").innerHTML = grade;
+}
+</script>
+</body>
+</html>

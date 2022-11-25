@@ -1,0 +1,70 @@
+<html>
+
+</html>
+<body>
+    <h1 id="gender" style="color: black;">Select Gender</h1>
+    <!-- Change Gender using radio button-->
+    <input type="radio" onclick="changeGender('M');" name="gender_option">
+    <span  style="color: red;">Male</span><br>
+    <input type="radio" onclick="changeGender('F');" name="gender_option">
+    <span  style="color: blue;">Female</span><br>
+    <input type="radio" onclick="changeGender('O');" name="gender_option">
+    <span  style="color: black;">Others</span><br>
+    <!-- Change color using press button and radio button-->
+    <button onclick="changeColor();">Change Color</button>
+    <span  style="color: red;">Red</span>
+    <input type="radio" onclick="redColor();" name="gender_color">
+    <span  style="color: blue;">Blue</span>
+    <input type="radio" onclick="blueColor();" name="gender_color">
+    <span  style="color: black;">Black</span>
+    <input type="radio" onclick="blackColor();" name="gender_color">
+    <script>
+        var x="M";
+        function changeGender(x)
+        {
+            var gender;
+            switch(x)
+            {
+                case 'M':
+                    gender='Male';
+                    break;
+                case 'F':
+                    gender='Female';
+                    break;
+                default:
+                    gender='Others';
+            }
+            document.getElementById("gender").innerHTML = gender;
+        }
+        function changeColor()
+        {
+           if(document.getElementById("gender").style.color == "red")
+           {
+                document.getElementById("gender").style.color = "blue";
+                document.getElementsByName("gender_color")[1].checked="true";
+           }
+           else if(document.getElementById("gender").style.color == "blue")
+           {
+                document.getElementById("gender").style.color = "black";
+                document.getElementsByName("gender_color")[2].checked="true";
+           }
+           else if(document.getElementById("gender").style.color == "black")
+           {
+                document.getElementById("gender").style.color = "red";
+                document.getElementsByName("gender_color")[0].checked="true";
+           }
+        }
+        function redColor()
+        {
+           document.getElementById("gender").style.color = "red";
+        }
+        function blueColor()
+        {
+           document.getElementById("gender").style.color = "blue";
+        }
+        function blackColor()
+        {
+           document.getElementById("gender").style.color = "black";
+        }
+    </script>
+</body>
